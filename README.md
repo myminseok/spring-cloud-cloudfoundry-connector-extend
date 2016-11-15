@@ -18,6 +18,6 @@ mvn install:install-file  -Dfile=spring-cloud-cloudfoundry-connector-extend-1.0.
 ```
 
 ## reference:
-http://cloud.spring.io/spring-cloud-connectors/spring-cloud-connectors.html
-https://github.com/spring-cloud/spring-cloud-connectors
-https://github.com/cloudfoundry-samples/spring-music
+* http://cloud.spring.io/spring-cloud-connectors/spring-cloud-connectors.html
+* https://github.com/spring-cloud/spring-cloud-connectors
+* https://github.com/cloudfoundry-samples/spring-music
