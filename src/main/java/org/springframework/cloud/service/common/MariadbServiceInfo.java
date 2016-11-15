@@ -2,11 +2,6 @@ package org.springframework.cloud.service.common;
 
 import org.springframework.cloud.service.ServiceInfo.ServiceLabel;
 
-/**
- *
- * @author Ramnivas Laddad
- *
- */
 @ServiceLabel("mariadb")
 public class MariadbServiceInfo extends RelationalServiceInfo {
     public static final String MARIADB_SCHEME = "mariadb";
