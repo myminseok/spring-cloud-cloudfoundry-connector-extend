@@ -2,7 +2,7 @@
 current cloud foundry connector doesnot understand uri starting with 'mariadb'. 
 this is connector for mariadb which can understand following protocol:
 ```
-mariadb://<username>:<password>@<hostname>:<port>/<databasename>.
+mariadb://<username>:<password>@<hostname>:<port>/<databasename>
 ```
 
 ## how to build
