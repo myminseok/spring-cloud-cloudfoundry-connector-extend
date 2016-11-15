@@ -1,0 +1,58 @@
+description = 'Spring-Cloud Cloud Foundry Connector Extend'
+apply plugin: 'base'
+
+buildscript {
+    ext {
+        springCloudConnectorsVersion = '1.2.2.RELEASE'
+        jacksonVersion = "2.3.3"
+    }
+    repositories {
+        jcenter()
+        maven { url 'https://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+                classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+                classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        }
+
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin:'java'
+apply plugin: 'propdeps'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/snapshot" }
+}
+
+dependencies {
+  compile "org.springframework.cloud:spring-cloud-core:$springCloudConnectorsVersion"
+  compile "org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudConnectorsVersion}"
+  compile "org.springframework.cloud:spring-cloud-cloudfoundry-connector:${springCloudConnectorsVersion}"
+}
+
+shadowJar {
+    classifier = null
+}
+
+assemble.dependsOn shadowJar
+
+configurations {
+    tests
+}
+
+task testJar(type: Jar) {
+    classifier = 'tests'
+    from sourceSets.test.output
+}
+
+build.dependsOn testJar
+
+artifacts {
+    tests testJar
+    archives testJar
+}
+
