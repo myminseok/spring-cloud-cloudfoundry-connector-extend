@@ -28,6 +28,7 @@ repositories {
     maven { url "http://repo.spring.io/snapshot" }
 }
 
+
 dependencies {
   compile "org.springframework.cloud:spring-cloud-core:$springCloudConnectorsVersion"
   compile "org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudConnectorsVersion}"
@@ -41,6 +42,14 @@ shadowJar {
 assemble.dependsOn shadowJar
 
 configurations {
+    compile.exclude module: 'spring-expression'
+    compile.exclude module: 'aopalliance'
+    compile.exclude module: 'spring-aop'
+    compile.exclude module: 'spring-asm'
+    compile.exclude module: 'spring-beans'
+    compile.exclude module: 'spring-context'
+    compile.exclude module: 'spring-core'
+
     tests
 }
 
