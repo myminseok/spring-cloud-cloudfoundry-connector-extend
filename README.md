@@ -1,6 +1,10 @@
+
+
 # cloud foundry connector for mariadb
 current cloud foundry connector doesnot understand uri starting with 'mariadb'. 
 this is connector for mariadb which can understand following protocol:
+this code is for test only, not for producction as it is not fully tested and maybe not best way for extension. 
+
 ```
 mariadb://<username>:<password>@<hostname>:<port>/<databasename>
 ```
